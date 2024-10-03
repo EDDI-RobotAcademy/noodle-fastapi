@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
+
 app = FastAPI()
 
 load_dotenv()
@@ -20,6 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(generateBacklogRouter)
 
 @app.get("/")
 def read_root():
