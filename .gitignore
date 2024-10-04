@@ -31,3 +31,13 @@ pnpm-debug.log*
 
 # ignore python cache files
 *.pyc
+
+# exclude *.pem
+*.pem
+
+# exclude *.crt
+*.crt
+
+# exclude *.key
+*.key
+*.txt
