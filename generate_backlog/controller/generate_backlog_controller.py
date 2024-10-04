@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 
 from fastapi import APIRouter, Depends, status
@@ -25,3 +26,17 @@ async def requestGenerateBacklogResult(generateBacklogService: GenerateBacklogSe
     generatedBacklogResult = generateBacklogService.requestGenerateBacklogResult()
 
     return JSONResponse(content=generatedBacklogResult, status_code=status.HTTP_200_OK)
+
+@generateBacklogRouter.get('/generate-example-backlog-result')
+async def requestGenerateExampleBacklogResult():
+    text = ""
+    with open("../example/gpt.txt", "r") as f:
+        text += f.read()
+
+    pattern = re.compile(
+        r"백로그 제목: (.+?)\n\s*- 도메인 이름: (.+?)\n\s*- Success Criteria: (.+?)\n\s*- To-do 목록:(.+?)(?=\n\d|\Z)", re.S)
+
+    # 추출된 결과 저장
+    backlogs = pattern.findall(text)
+
+    return JSONResponse({"backlogList": backlogs})
