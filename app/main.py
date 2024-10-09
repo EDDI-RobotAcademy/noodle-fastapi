@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 
 from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
+from multiple_user_test_point.controller.multiple_user_test_point_controller import multipleUserTestPointRouter
 from user_defined_initializer.init import UserDefinedInitializer
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'template'))
@@ -40,6 +41,8 @@ app.add_middleware(
 
 app.include_router(deepLearningRouter)
 app.include_router(diceResultRouter)
+
+app.include_router(multipleUserTestPointRouter)
 
 app.include_router(generateBacklogRouter)
 
