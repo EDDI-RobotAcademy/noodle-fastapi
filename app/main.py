@@ -8,6 +8,7 @@ import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI
 
+from ai_to_db_test_point.controller.ai_to_db_test_point_controller import aiToDbTestPointRouter
 from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
 from multiple_user_test_point.controller.multiple_user_test_point_controller import multipleUserTestPointRouter
 from user_defined_initializer.init import UserDefinedInitializer
@@ -45,6 +46,7 @@ app.include_router(diceResultRouter)
 app.include_router(multipleUserTestPointRouter)
 
 app.include_router(generateBacklogRouter)
+app.include_router(aiToDbTestPointRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
