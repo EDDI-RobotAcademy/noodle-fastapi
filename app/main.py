@@ -10,6 +10,7 @@ from fastapi import FastAPI
 
 from ai_to_db_test_point.controller.ai_to_db_test_point_controller import aiToDbTestPointRouter
 from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
+from generate_result_report.controller.generate_result_report_controller import generateResultReportRouter
 from multiple_user_test_point.controller.multiple_user_test_point_controller import multipleUserTestPointRouter
 from user_defined_initializer.init import UserDefinedInitializer
 
@@ -47,6 +48,7 @@ app.include_router(multipleUserTestPointRouter)
 
 app.include_router(generateBacklogRouter)
 app.include_router(aiToDbTestPointRouter)
+app.include_router(generateResultReportRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
