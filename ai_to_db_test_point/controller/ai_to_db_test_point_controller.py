@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
 
 from ai_to_db_test_point.controller.request_form.ai_to_db_test_point_request_form import AiToDbTestPointRequestForm
-from ai_to_db_test_point.service.ai_to_db_test_point_servie_impl import AiToDbTestPointServiceImpl
+from ai_to_db_test_point.service.ai_to_db_test_point_service_impl import AiToDbTestPointServiceImpl
 from user_defined_queue.repository.user_defined_queue_repository_impl import UserDefinedQueueRepositoryImpl
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'template'))
