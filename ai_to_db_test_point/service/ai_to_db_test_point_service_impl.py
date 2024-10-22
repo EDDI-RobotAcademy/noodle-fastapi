@@ -13,7 +13,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'template', 'inclu
 
 class AiToDbTestPointServiceImpl(AiToDbTestPointService):
 
-    def __init(self, userDefinedQueueRepository:UserDefinedQueueRepositoryImpl):
+    def __init__(self, userDefinedQueueRepository:UserDefinedQueueRepositoryImpl):
         self.__aiToDbTestPointRepository = AiToDbTestPointRepositoryImpl()
         self.__userDefinedQueueRepository = userDefinedQueueRepository
 
