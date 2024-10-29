@@ -8,11 +8,11 @@ from template.include.socket_server.utility.color_print import ColorPrinter
 
 
 class AiToDbTestPointRepositoryImpl(AiToDbTestPointRepository):
-    async def requestAiResult(self, userDefinedReceiverFastAPIChannel, userToken):
+    async def requestAiResult(self, userDefinedReceiverFastAPIChannel, userToken, intermediateData):
         temporaryQueueList = []
         userTokenFound = False
 
-        userDefinedReceiverFastAPIChannel.put(json.dumps({"userToken": "test", "aiResult": 3}))
+        userDefinedReceiverFastAPIChannel.put(json.dumps({"userToken": "test", "aiResult": intermediateData}))
 
         loop = asyncio.get_event_loop()
 

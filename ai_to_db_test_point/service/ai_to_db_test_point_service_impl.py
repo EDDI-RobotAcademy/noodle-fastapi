@@ -27,6 +27,6 @@ class AiToDbTestPointServiceImpl(AiToDbTestPointService):
             aiToDbTestPointRequest.toUserToken()
         )
 
-        success = await DjangoHttpClient.post("/ai2db/testpoint", aiToDbTestPointResponse.json())
+        success = await DjangoHttpClient.post("/backlog/create", aiToDbTestPointResponse.json())
 
         return success
