@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 
 from ai_to_db_test_point.controller.ai_to_db_test_point_controller import aiToDbTestPointRouter
+from conditional_custom_executor_multiple_user_test.controller.conditional_custom_executor_multiple_user_test_controller import \
+    conditionalCustomExecutorMultipleUserTestRouter
 from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
 from generate_result_report.controller.generate_result_report_controller import generateResultReportRouter
 from multiple_user_test_point.controller.multiple_user_test_point_controller import multipleUserTestPointRouter
@@ -49,6 +51,7 @@ app.include_router(multipleUserTestPointRouter)
 app.include_router(generateBacklogRouter)
 app.include_router(aiToDbTestPointRouter)
 app.include_router(generateResultReportRouter)
+app.include_router(conditionalCustomExecutorMultipleUserTestRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
