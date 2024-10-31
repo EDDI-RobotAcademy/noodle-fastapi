@@ -13,6 +13,7 @@ from conditional_custom_executor_multiple_user_test.controller.conditional_custo
     conditionalCustomExecutorMultipleUserTestRouter
 from generate_backlog.controller.generate_backlog_controller import generateBacklogRouter
 from generate_result_report.controller.generate_result_report_controller import generateResultReportRouter
+from meeting_recording_summary.controller.meeting_recording_summary_controller import meetingRecordingSummaryRouter
 from multiple_user_test_point.controller.multiple_user_test_point_controller import multipleUserTestPointRouter
 from user_defined_initializer.init import UserDefinedInitializer
 
@@ -52,6 +53,7 @@ app.include_router(generateBacklogRouter)
 app.include_router(aiToDbTestPointRouter)
 app.include_router(generateResultReportRouter)
 app.include_router(conditionalCustomExecutorMultipleUserTestRouter)
+app.include_router(meetingRecordingSummaryRouter)
 
 if __name__ == "__main__":
     colorama.init(autoreset=True)
