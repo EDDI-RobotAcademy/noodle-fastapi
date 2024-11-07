@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   app:
+
     image: ghcr.io/${GITHUB_ACTOR}/noodle-fastapi-server:latest
     container_name: fastapi-deploy-server
     ports:
@@ -14,6 +15,7 @@ services:
       - SERVER_CERTIFICATE=${SERVER_CERTIFICATE}
       - CLIENT_CA_CERTIFICATE=${CLIENT_CA_CERTIFICATE}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+
     networks:
       - app
 
